@@ -1,0 +1,9 @@
+.container {
+    position: relative;
+}
+
+.arrowUp {
+    position: absolute;
+    top: auto;
+    left: auto;
+}

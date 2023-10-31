@@ -1,0 +1,61 @@
+.card {
+    border-top: 2px solid rgba(128, 128, 128, 0.205);
+}
+
+.date {
+    margin-top: 0.75em;
+    opacity: 0.75;
+    margin: 0.5em 0;
+}
+
+.heading {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.more {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.moreLink {
+    margin-right: 0.5em;
+    color: #14B8A6;
+}
+
+.moreLinkIcon {
+    color: #14B8A6;
+}
+
+/* .moreLink:hover {
+    font-size: 1.0025em;
+} */
+
+.slug {
+    margin: 1.5em 0;
+}
+
+@media screen and (max-width: 640px) {
+    .heading {
+        font-size: 24px;
+    }
+
+    .slug {
+        margin: 1em 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .card {
+        display: flex;
+    }
+
+    .date {
+        flex: 2;
+    }
+
+    .asideContent {
+        flex: 6;
+    }
+}
