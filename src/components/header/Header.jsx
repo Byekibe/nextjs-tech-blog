@@ -96,7 +96,7 @@ export default function Header() {
             <div
                 style=
                 {{ 
-                    top: showMenu ? "50%" : "1em",
+                    top: showMenu ? "1em" : "1em",
                     backgroundColor: theme === "light"? "gray" : "black",
                     color: theme ==="light"? "#fff" : "#fff",
                     border: "2px solid #ffff80"
