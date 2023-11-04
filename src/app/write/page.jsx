@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from './WritePage.module.css';
+import styles from './writePage.module.css';
 
 export default function WritePage() {
   const [title, setTitle] = useState("");
