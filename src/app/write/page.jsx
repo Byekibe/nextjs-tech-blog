@@ -10,8 +10,8 @@ export default function WritePage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    fetch("/api/posts", {
+// Here API ENDPOINT
+    fetch("/nexty/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title, slug, body

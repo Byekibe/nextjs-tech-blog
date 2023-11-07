@@ -15,7 +15,8 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch("/api/posts");
+      // API ENDPOINT
+      const res = await fetch("/nexty/api/posts");
 
       const data = await res.json();
       console.log(`data: ${data.data}`);
