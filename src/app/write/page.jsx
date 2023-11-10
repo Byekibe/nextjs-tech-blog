@@ -11,7 +11,7 @@ export default function WritePage() {
   async function handleSubmit(e) {
     e.preventDefault();
 // Here API ENDPOINT
-    fetch("/nexty/api/posts", {
+    fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title, slug, body
