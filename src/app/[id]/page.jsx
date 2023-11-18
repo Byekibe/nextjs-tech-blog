@@ -33,9 +33,14 @@ const getPost = async (id) => {
 export default async function SinglePage({ params }) {
   const { id } = params;
   const data = await getPost(id);
+  const { date, author } = data;
   return (
     <div className={`${styles.card} ${roboto.className}`}>
-      <div className={styles.date}>10 January, 2021</div>
+      Published:{" "}
+      <div className={styles.date}>{data?.createdAt.slice(0, 10)}</div> by{" "}
+      <i>
+        <h5>{data?.author}</h5>
+      </i>
       <div className={styles.asideContent}>
         <h2 className={styles.heading}>{data?.title}</h2>
         <Editor data={data?.text} />

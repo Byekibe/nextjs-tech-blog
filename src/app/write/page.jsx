@@ -12,6 +12,7 @@ export default function WritePage() {
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
   const [text, setText] = useState("");
+  const [author, setAuthor] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,6 +22,7 @@ export default function WritePage() {
       body: JSON.stringify({
         title,
         slug,
+        author,
         text,
       }),
 
@@ -30,6 +32,7 @@ export default function WritePage() {
     setTitle("");
     setSlug("");
     setText("");
+    setAuthor("");
   }
 
   return (
@@ -54,7 +57,16 @@ export default function WritePage() {
         />
       </div>
       <br />
-
+      <div className={styles.author}>
+        <label htmlFor="author">Author</label>
+        <input
+          type="text"
+          name="author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+      </div>
+      <br />
       <div className={styles.myBody}>
         <label htmlFor="body">Body</label>
         {/* <textarea 

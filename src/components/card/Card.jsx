@@ -15,7 +15,7 @@ export default function Card({ posts, loading }) {
       ) : (
         posts.map((post) => (
           <div key={post._id} className={`${styles.card} ${roboto.className}`}>
-            <div className={styles.date}>10 January, 2021</div>
+            <div className={styles.date}>{post?.createdAt.slice(0, 10)}</div>
             <div className={styles.asideContent}>
               <h2 className={styles.heading}>{post.title}</h2>
               <p className={styles.slug}>{post.slug}</p>
