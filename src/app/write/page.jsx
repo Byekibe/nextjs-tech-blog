@@ -1,28 +1,35 @@
 "use client";
 
 import { useState } from "react";
-import styles from './writePage.module.css';
+import styles from "./writePage.module.css";
+import sanitizeHtml from "sanitize-html";
+import { MdEditor } from "md-editor-rt";
+import "md-editor-rt/lib/style.css";
+
+const sanitize = (html) => sanitizeHtml(html);
 
 export default function WritePage() {
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
-  const [body, setBody] = useState("");
+  const [text, setText] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-// Here API ENDPOINT
+    // Here API ENDPOINT
     fetch("/api/posts", {
-        method: "POST",
-        body: JSON.stringify({
-          title, slug, body
-        }),
+      method: "POST",
+      body: JSON.stringify({
+        title,
+        slug,
+        text,
+      }),
 
-        headers: { "content-type": "application/json" }
-    }).catch(err => console.log(err));
+      headers: { "content-type": "application/json" },
+    }).catch((err) => console.log(err));
 
     setTitle("");
     setSlug("");
-    setBody("");
+    setText("");
   }
 
   return (
@@ -33,7 +40,7 @@ export default function WritePage() {
           type="text"
           name="title"
           value={title}
-          onChange={e => setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
       <br />
@@ -43,21 +50,30 @@ export default function WritePage() {
           type="text"
           name="slug"
           value={slug}
-          onChange={e => setSlug(e.target.value)} 
+          onChange={(e) => setSlug(e.target.value)}
         />
       </div>
       <br />
 
       <div className={styles.myBody}>
         <label htmlFor="body">Body</label>
-        <textarea 
+        {/* <textarea 
           name="body"
           value={body}
           onChange={e => setBody(e.target.value)}
+        /> */}
+        <MdEditor
+          theme="dark"
+          modelValue={text}
+          onChange={setText}
+          sanitize={sanitize}
+          language="en-US"
         />
       </div>
       <br />
-      <button className={styles.button} type="submit">Publish</button>
+      <button className={styles.button} type="submit">
+        Publish
+      </button>
     </form>
-  )
+  );
 }
