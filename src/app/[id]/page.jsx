@@ -6,20 +6,8 @@ import Editor from "../../components/myEditor/Editor.jsx";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
 
-const getPost = async (id) => {
-  const res = await fetch(`/api/posts/${id}`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed");
-  }
-
-  return res.json();
-};
-
 // const getPost = async (id) => {
-//   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+//   const res = await fetch(`/api/posts/${id}`, {
 //     cache: "no-store",
 //   });
 
@@ -29,6 +17,18 @@ const getPost = async (id) => {
 
 //   return res.json();
 // };
+
+const getPost = async (id) => {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
 
 export default async function SinglePage({ params }) {
   const { id } = params;
