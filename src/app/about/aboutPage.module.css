@@ -1,0 +1,12 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myBtn {
+  background-color: rgb(223, 216, 216);
+  padding: 0.375em 1.25em;
+  border-radius: 5px;
+  color: #14b8a6;
+}

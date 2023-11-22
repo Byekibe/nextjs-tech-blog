@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Inter } from "next/font/google";
-
 import ScrollUp from "@/components/scrollUp/ScrollUp";
 import Card from "@/components/card/Card";
 import { useState, useEffect } from "react";
@@ -14,8 +13,13 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      // API ENDPOINT
-      const res = await fetch("/api/posts");
+      const post_url =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/posts"
+          : "/api/posts";
+      const res = await fetch(post_url, {
+        cache: "no-store",
+      });
 
       const data = await res.json();
 

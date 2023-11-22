@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import styles from "./writePage.module.css";
+import { useState, useEffect } from "react";
+import styles from "./update.module.css";
 import sanitizeHtml from "sanitize-html";
 import { MdEditor } from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
@@ -9,43 +9,33 @@ import { useRouter } from "next/navigation";
 
 const sanitize = (html) => sanitizeHtml(html);
 
-export default function WritePage() {
+export default function UpdateForm({ data, id }) {
   const router = useRouter();
-  const [title, setTitle] = useState("");
-  const [slug, setSlug] = useState("");
-  const [text, setText] = useState("");
-  const [author, setAuthor] = useState("");
+  const [title, setTitle] = useState(data.title);
+  const [slug, setSlug] = useState(data.slug);
+  const [text, setText] = useState(data.text);
+  const [author, setAuthor] = useState(data.author);
 
-  async function handleSubmit(e) {
+  function handlePostUpdate(e) {
     e.preventDefault();
-    // Here API ENDPOINT
-    const writeUrl =
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000/api/posts"
-        : "/api/posts";
-    console.log(writeUrl);
-    fetch(writeUrl, {
-      method: "POST",
+    const putUrl = `http://localhost:3000/api/posts/${id}`;
+    console.log(putUrl);
+    fetch(putUrl, {
+      method: "PUT",
       body: JSON.stringify({
-        title,
-        slug,
-        author,
-        text,
+        title: title,
+        slug: slug,
+        text: text,
+        author: author,
       }),
-
       headers: { "content-type": "application/json" },
     }).catch((err) => console.log(err));
-
-    setTitle("");
-    setSlug("");
-    setText("");
-    setAuthor("");
 
     router.push("/");
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handlePostUpdate}>
       <div className={styles.title}>
         <label htmlFor="title">Title</label>
         <input
@@ -79,10 +69,10 @@ export default function WritePage() {
       <div className={styles.myBody}>
         <label htmlFor="body">Body</label>
         {/* <textarea 
-          name="body"
-          value={body}
-          onChange={e => setBody(e.target.value)}
-        /> */}
+      name="body"
+      value={body}
+      onChange={e => setBody(e.target.value)}
+    /> */}
         <MdEditor
           theme="dark"
           modelValue={text}
@@ -93,7 +83,7 @@ export default function WritePage() {
       </div>
       <br />
       <button className={styles.button} type="submit">
-        Publish
+        Update
       </button>
     </form>
   );

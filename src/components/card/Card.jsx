@@ -19,11 +19,29 @@ export default function Card({ posts, loading }) {
             <div className={styles.asideContent}>
               <h2 className={styles.heading}>{post.title}</h2>
               <p className={styles.slug}>{post.slug}</p>
-              <div className={styles.more}>
-                <Link className={styles.moreLink} href={post._id}>
-                  Read more
-                </Link>
-                <RiArrowRightLine className={styles.moreLinkIcon} />
+              <div>
+                <div className={styles.more}>
+                  <Link className={styles.moreLink} href={`/posts/${post._id}`}>
+                    Read more
+                  </Link>
+                  <RiArrowRightLine className={styles.moreLinkIcon} />
+                </div>
+                <div>
+                  <div>
+                    <Link
+                      className={styles.link}
+                      href={`/deletePost/${post._id}`}
+                    >
+                      Delete
+                    </Link>
+                    <Link
+                      className={styles.link}
+                      href={`/updatePost/${post._id}`}
+                    >
+                      Update
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

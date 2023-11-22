@@ -20,10 +20,49 @@ export const GET = async (req, { params }) => {
       JSON.stringify({ message: "Something went wrong" }, { status: 500 })
     );
   }
-  // const client = await clientPromise;
-  // const db = client.db("middle-east");
+};
 
-  // const posts = await db.collection("posts").find({}).toArray();
+export const POST = async (req, { params }) => {
+  const { id } = params;
 
-  // return new NextResponse(JSON.stringify({ status: 200, data: posts }));
+  try {
+    const post = await db
+      .collection("posts")
+      .deleteOne({ _id: new ObjectId(id) });
+
+    return new NextResponse(JSON.stringify(post, { status: 200 }));
+  } catch (error) {
+    console.log(`Error: ${error}`);
+
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong" }, { status: 500 })
+    );
+  }
+};
+
+export const PUT = async (req, { params }) => {
+  const { id } = params;
+  const { title, slug, text, author } = await req.json();
+
+  // console.log(
+  //   `TITLE: -------------------${title} ${slug}-----------------------------`
+  // );
+
+  try {
+    const post = await db
+      .collection("posts")
+      .updateOne(
+        { _id: new ObjectId(id) },
+        { $set: { title: title, slug: slug, text: text, author: author } }
+      );
+    return new NextResponse(JSON.stringify(post, { status: 200 }));
+  } catch (error) {
+    console.log(
+      `Error: -----------------------------------------------------${error}------------------------------------`
+    );
+
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong" }, { status: 500 })
+    );
+  }
 };

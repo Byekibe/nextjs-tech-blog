@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import styles from "./writePage.module.css";
+import { useState, useEffect } from "react";
+import styles from "./updatePage.module.css";
 import sanitizeHtml from "sanitize-html";
 import { MdEditor } from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
@@ -9,43 +9,26 @@ import { useRouter } from "next/navigation";
 
 const sanitize = (html) => sanitizeHtml(html);
 
-export default function WritePage() {
+export default async function UpdatePage({ postId }) {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
   const [text, setText] = useState("");
   const [author, setAuthor] = useState("");
+  const [data, setData] = useState([]);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    // Here API ENDPOINT
-    const writeUrl =
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000/api/posts"
-        : "/api/posts";
-    console.log(writeUrl);
-    fetch(writeUrl, {
-      method: "POST",
-      body: JSON.stringify({
-        title,
-        slug,
-        author,
-        text,
-      }),
+  console.log(data);
 
-      headers: { "content-type": "application/json" },
+  function handlePostUpdate() {
+    fetch(`http://localhost:3000/api/posts/${postId}`, {
+      method: "PUT",
     }).catch((err) => console.log(err));
-
-    setTitle("");
-    setSlug("");
-    setText("");
-    setAuthor("");
 
     router.push("/");
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handlePostUpdate}>
       <div className={styles.title}>
         <label htmlFor="title">Title</label>
         <input
@@ -93,7 +76,7 @@ export default function WritePage() {
       </div>
       <br />
       <button className={styles.button} type="submit">
-        Publish
+        Edit
       </button>
     </form>
   );

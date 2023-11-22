@@ -1,0 +1,9 @@
+.title,
+.slug,
+.myBody {
+  margin-bottom: 1em;
+}
+
+.button {
+  border: 2px solid gray;
+}
