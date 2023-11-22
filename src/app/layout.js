@@ -5,7 +5,8 @@ import { ThemeContextProvider } from "@/context/ThemeContext";
 import { MenuContextProvider } from "@/context/MenuContext";
 import { Providers } from "@/providers/themeProvider";
 import Footer from "@/components/footer/Footer";
-import { SessionProvider } from "next-auth/react";
+// import { SessionProvider } from "next-auth/react";
+import AuthProvider from "../providers/AuthProvider.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,17 +20,19 @@ export default function RootLayout({ children }) {
     <html suppressHydrationWarning lang="en">
       <head />
       <body className={inter.className}>
-        <Providers>
-          <MenuContextProvider>
-            <div className="container">
-              <div className="wrapper">
-                <Header />
-                {children}
-                <Footer />
+        <AuthProvider>
+          <Providers>
+            <MenuContextProvider>
+              <div className="container">
+                <div className="wrapper">
+                  <Header />
+                  {children}
+                  <Footer />
+                </div>
               </div>
-            </div>
-          </MenuContextProvider>
-        </Providers>
+            </MenuContextProvider>
+          </Providers>
+        </AuthProvider>
       </body>
     </html>
   );

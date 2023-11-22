@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Inter, Roboto } from "next/font/google";
 import { RiArrowRightLine } from "react-icons/ri";
 import Loader from "../loader/Loader";
+import AuthGroup from "../authGroup/AuthGroup";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
@@ -27,20 +28,7 @@ export default function Card({ posts, loading }) {
                   <RiArrowRightLine className={styles.moreLinkIcon} />
                 </div>
                 <div>
-                  <div>
-                    <Link
-                      className={styles.link}
-                      href={`/deletePost/${post._id}`}
-                    >
-                      Delete
-                    </Link>
-                    <Link
-                      className={styles.link}
-                      href={`/updatePost/${post._id}`}
-                    >
-                      Update
-                    </Link>
-                  </div>
+                  <AuthGroup id={post._id} />
                 </div>
               </div>
             </div>
