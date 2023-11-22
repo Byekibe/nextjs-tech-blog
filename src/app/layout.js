@@ -7,11 +7,12 @@ import { Providers } from "@/providers/themeProvider";
 import Footer from "@/components/footer/Footer";
 // import { SessionProvider } from "next-auth/react";
 import AuthProvider from "../providers/AuthProvider.jsx";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Pete Blog",
+  title: "byedev.com Blog",
   description: "Software development technical blog",
 };
 
