@@ -26,7 +26,8 @@ export default function WritePage() {
     //     : "/api/posts";
     // console.log(writeUrl);
 
-    const writeUrl = `${baseUrl}/api/posts`;
+    const writeUrl = "/api/posts";
+    // const writeUrl = `${baseUrl}/api/posts`;
 
     fetch(writeUrl, {
       method: "POST",

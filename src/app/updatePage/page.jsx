@@ -10,7 +10,7 @@ import { baseUrl } from "../page";
 
 const sanitize = (html) => sanitizeHtml(html);
 
-export default async function UpdatePage({ postId }) {
+export default function UpdatePage({ postId }) {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
