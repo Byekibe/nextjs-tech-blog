@@ -23,10 +23,7 @@ export default function Card({ posts, loading }) {
               <p className={styles.slug}>{post.slug}</p>
               <div>
                 <div className={styles.more}>
-                  <Link
-                    className={styles.moreLink}
-                    href={`${baseUrl}/posts/${post._id}`}
-                  >
+                  <Link className={styles.moreLink} href={`/posts/${post._id}`}>
                     Read more
                   </Link>
                   <RiArrowRightLine className={styles.moreLinkIcon} />
