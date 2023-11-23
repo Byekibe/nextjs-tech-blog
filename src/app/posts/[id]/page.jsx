@@ -11,7 +11,6 @@ const baseUrl = "http://localhost:3000";
 const getPost = async (id) => {
   const postsUrl = `${baseUrl}/api/posts/${id}`;
   // const postsUrl = `/api/posts/${id}`;
-  console.log(`-------------------${postsUrl}--------------------------------`);
 
   const res = await fetch(postsUrl, {
     cache: "no-store",

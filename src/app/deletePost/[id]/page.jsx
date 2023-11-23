@@ -12,9 +12,13 @@ const baseUrl = "http://localhost:3000";
 export default function Modify({ params }) {
   const router = useRouter();
   const { id } = params;
-  console.log(id);
+  const deletePostUrl = `${baseUrl}/api/posts/${id}`;
+  console.log(deletePostUrl);
+
+  const deletePostUrlUsed = `/api/posts/${id}`;
+
   function handlePostDelete() {
-    fetch(`${baseUrl}/api/posts/${id}`, {
+    fetch(deletePostUrlUsed, {
       method: "POST",
     }).catch((err) => console.log(err));
 

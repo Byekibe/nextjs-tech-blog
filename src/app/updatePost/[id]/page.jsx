@@ -26,8 +26,6 @@ export default async function UpdatePage({ params }) {
     return data;
   };
 
-  console.log(await getData());
-
   return (
     <div>
       <UpdateForm data={await getData()} id={id} />
