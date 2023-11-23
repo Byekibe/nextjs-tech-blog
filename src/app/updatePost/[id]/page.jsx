@@ -19,8 +19,8 @@ export default async function UpdatePage({ params }) {
   //   }, []);
 
   const getData = async () => {
-    // const res = await fetch(`${baseUrl}/api/posts/${id}`);
-    const res = await fetch(`/api/posts/${id}`);
+    const res = await fetch(`${baseUrl}/api/posts/${id}`);
+    // const res = await fetch(`/api/posts/${id}`);
     const data = await res.json();
 
     return data;
