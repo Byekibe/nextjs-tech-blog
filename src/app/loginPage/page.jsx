@@ -14,7 +14,15 @@ export default function LoginPage() {
   //   }
   return (
     <div className={styles.login}>
-      <button onClick={() => signIn("google")} className={styles.myBtn}>
+      <button
+        onClick={() =>
+          signIn("google", {
+            redirect: true,
+            callbackUrl: "http://blog.byedev.com",
+          })
+        }
+        className={styles.myBtn}
+      >
         <div className={styles.icon}>
           <FcGoogle />
           Login
