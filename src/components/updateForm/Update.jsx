@@ -18,7 +18,8 @@ export default function UpdateForm({ data, id }) {
 
   function handlePostUpdate(e) {
     e.preventDefault();
-    const putUrl = `http://localhost:3000/api/posts/${id}`;
+    // const putUrl = `http://localhost:3000/api/posts/${id}`;
+    const putUrl = `/api/posts/${id}`;
     console.log(putUrl);
     fetch(putUrl, {
       method: "PUT",

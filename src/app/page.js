@@ -20,7 +20,8 @@ export default function Home() {
       //     ? "http://localhost:3000/api/posts"
       //     : "/api/posts";
 
-      const post_url = `${baseUrl}/api/posts`;
+      // const post_url = `${baseUrl}/api/posts`;
+      const post_url = "/api/posts";
       const res = await fetch(post_url, {
         cache: "no-store",
       });
