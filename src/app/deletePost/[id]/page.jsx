@@ -6,7 +6,8 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import UpdatePage from "../../updatePage/page";
 import { useState } from "react";
-import { baseUrl } from "@/app/page";
+// import { baseUrl } from "@/app/page";
+const baseUrl = "http://localhost:3000";
 
 export default function Modify({ params }) {
   const router = useRouter();
