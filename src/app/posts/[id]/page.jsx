@@ -11,6 +11,7 @@ const baseUrl = process.env.URL;
 const getPost = async (id) => {
   // const postsUrl = `${baseUrl}/api/posts/${id}`;
   const postsUrl = `/api/posts/${id}`;
+  console.log(`-------------------${postsUrl}--------------------------------`);
 
   const res = await fetch(postsUrl, {
     cache: "no-store",
@@ -27,9 +28,9 @@ export default async function SinglePage({ params }) {
   const { id } = params;
   const data = await getPost(id);
   const { date, author } = data;
-  function getId(id) {
-    return id;
-  }
+  // function getId(id) {
+  //   return id;
+  // }
   return (
     <div className={`${styles.card} ${roboto.className}`}>
       Published:{" "}
