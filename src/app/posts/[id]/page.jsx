@@ -6,7 +6,7 @@ import Editor from "../../../components/myEditor/Editor.jsx";
 import ModifySinglePost from "../../../components/modify/ModifySinglePost.jsx";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
-const baseUrl = process.env.URL;
+const baseUrl = "http://localhost:3000";
 
 const getPost = async (id) => {
   const postsUrl = `${baseUrl}/api/posts/${id}`;
