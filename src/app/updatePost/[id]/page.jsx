@@ -1,7 +1,7 @@
 import UpdateForm from "../../../components/updateForm/Update";
 import styles from "./updatePost.module.css";
 
-const baseUrl = process.env.URL;
+const baseUrl = "http://localhost:3000";
 
 export default async function UpdatePage({ params }) {
   const { id } = params;
@@ -25,6 +25,8 @@ export default async function UpdatePage({ params }) {
 
     return data;
   };
+
+  console.log(await getData());
 
   return (
     <div>
