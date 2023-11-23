@@ -10,7 +10,7 @@ const baseUrl = process.env.URL;
 
 const getPost = async (id) => {
   const postsUrl = `${baseUrl}/api/posts/${id}`;
-  // const postsUrl = `/api/posts/${id}`;
+  // const postsUrl = `${baseUrl}/api/posts/${id}`;
 
   const res = await fetch(postsUrl, {
     cache: "no-store",
