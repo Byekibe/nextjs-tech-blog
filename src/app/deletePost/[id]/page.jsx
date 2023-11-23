@@ -6,13 +6,14 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import UpdatePage from "../../updatePage/page";
 import { useState } from "react";
+import { baseUrl } from "@/app/page";
 
 export default function Modify({ params }) {
   const router = useRouter();
   const { id } = params;
   console.log(id);
   function handlePostDelete() {
-    fetch(`http://localhost:3000/api/posts/${id}`, {
+    fetch(`${baseUrl}/api/posts/${id}`, {
       method: "POST",
     }).catch((err) => console.log(err));
 

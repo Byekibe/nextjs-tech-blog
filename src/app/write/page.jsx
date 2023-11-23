@@ -6,6 +6,7 @@ import sanitizeHtml from "sanitize-html";
 import { MdEditor } from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
 import { useRouter } from "next/navigation";
+import { baseUrl } from "../page";
 
 const sanitize = (html) => sanitizeHtml(html);
 
@@ -19,11 +20,14 @@ export default function WritePage() {
   async function handleSubmit(e) {
     e.preventDefault();
     // Here API ENDPOINT
-    const writeUrl =
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000/api/posts"
-        : "/api/posts";
-    console.log(writeUrl);
+    // const writeUrl =
+    //   process.env.NODE_ENV === "development"
+    //     ? "http://localhost:3000/api/posts"
+    //     : "/api/posts";
+    // console.log(writeUrl);
+
+    const writeUrl = `${baseUrl}/api/posts`;
+
     fetch(writeUrl, {
       method: "POST",
       body: JSON.stringify({

@@ -6,6 +6,7 @@ import sanitizeHtml from "sanitize-html";
 import { MdEditor } from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
 import { useRouter } from "next/navigation";
+import { baseUrl } from "../page";
 
 const sanitize = (html) => sanitizeHtml(html);
 
@@ -20,7 +21,7 @@ export default async function UpdatePage({ postId }) {
   console.log(data);
 
   function handlePostUpdate() {
-    fetch(`http://localhost:3000/api/posts/${postId}`, {
+    fetch(`${baseUrl}/api/posts/${postId}`, {
       method: "PUT",
     }).catch((err) => console.log(err));
 

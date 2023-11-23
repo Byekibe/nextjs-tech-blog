@@ -7,16 +7,20 @@ import Card from "@/components/card/Card";
 import { useState, useEffect } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
+export const baseUrl = "http://localhost:3000";
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const post_url =
-        process.env.NODE_ENV === "development"
-          ? "http://localhost:3000/api/posts"
-          : "/api/posts";
+      // const post_url =
+      //   process.env.NODE_ENV === "development"
+      //     ? "http://localhost:3000/api/posts"
+      //     : "/api/posts";
+
+      const post_url = `${baseUrl}/api/posts`;
       const res = await fetch(post_url, {
         cache: "no-store",
       });

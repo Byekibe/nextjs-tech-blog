@@ -6,13 +6,10 @@ import Editor from "../../../components/myEditor/Editor.jsx";
 import ModifySinglePost from "../../../components/modify/ModifySinglePost.jsx";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
+const baseUrl = process.env.URL;
 
 const getPost = async (id) => {
-  // const postsUrl =
-  //   process.env.NODE_ENV === "development"
-  //     ? `http://localhost:3000/api/posts/${id}`
-  //     : `/api/posts/${id}`;
-  const postsUrl = `http://localhost:3000/api/posts/${id}`;
+  const postsUrl = `${baseUrl}/api/posts/${id}`;
 
   const res = await fetch(postsUrl, {
     cache: "no-store",
