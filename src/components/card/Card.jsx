@@ -4,6 +4,7 @@ import { Inter, Roboto } from "next/font/google";
 import { RiArrowRightLine } from "react-icons/ri";
 import Loader from "../loader/Loader";
 import AuthGroup from "../authGroup/AuthGroup";
+import { baseUrl } from "@/app/page";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
@@ -24,7 +25,7 @@ export default function Card({ posts, loading }) {
                 <div className={styles.more}>
                   <Link
                     className={styles.moreLink}
-                    href={`/api/posts/${post._id}`}
+                    href={`${baseUrl}/posts/${post._id}`}
                   >
                     Read more
                   </Link>
