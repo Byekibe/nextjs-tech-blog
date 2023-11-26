@@ -1,3 +1,27 @@
+.meta {
+  display: flex;
+  margin-bottom: 1.5em;
+}
+
+.date {
+  margin-right: 0.375em;
+}
+
+.by {
+  font-weight: 700;
+  margin-right: 0.375em;
+}
+
+.publish {
+  margin-right: 0.375em;
+  font-weight: 700;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 2em;
+}
+
 .modify {
   display: flex;
 }
@@ -10,4 +34,28 @@
 .trash {
   margin-left: 0.5em;
   font-size: 1.5em;
+}
+
+@media screen and (max-width: 1536px) {
+  .heading {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .heading {
+    font-size: 1.75em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .heading {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 1.375em;
+  }
 }

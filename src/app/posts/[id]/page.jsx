@@ -32,11 +32,14 @@ export default async function SinglePage({ params }) {
   // }
   return (
     <div className={`${styles.card} ${roboto.className}`}>
-      Published:{" "}
-      <div className={styles.date}>{data?.createdAt.slice(0, 10)}</div> by{" "}
-      <i>
-        <h5>{data?.author}</h5>
-      </i>
+      <div className={styles.meta}>
+        <h3 className={styles.publish}>Published:</h3>{" "}
+        <div className={styles.date}>{data?.createdAt.slice(0, 10)}</div>
+        <div className={styles.by}>By: </div>{" "}
+        <i>
+          <h5>{data?.author}</h5>
+        </i>
+      </div>
       {/* Here */}
       {/* <ModifySinglePost id={params.id} /> */}
       <div className={styles.asideContent}>

@@ -58,6 +58,10 @@ body {
   text-align: justify;
 }
 
+.md-editor-preview-wrapper {
+  padding: 10px 0 !important;
+}
+
 /* .noParticularSelector {
   color: #ffffff80;
 } */
@@ -65,27 +69,27 @@ body {
 @media screen and (max-width: 1536px) {
   .wrapper {
     max-width: 1024px;
-    padding: 0 60px;
+    padding: 0 4em;
   }
 }
 
 @media screen and (max-width: 1280px) {
   .wrapper {
-    max-width: 1366px;
-    padding: 0 45px;
+    max-width: 768px;
+    padding: 0 3.25em;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .wrapper {
-    max-width: 768px;
-    padding: 0 30px;
+    max-width: 640px;
+    padding: 0 3em;
   }
 }
 
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 640px;
-    padding: 0 1em;
+    padding: 0 1.75em;
   }
 }
