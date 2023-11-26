@@ -20,6 +20,9 @@ export default function AuthGroup({ id }) {
             <Link className={styles.link} href={`/updatePost/${id}`}>
               Update
             </Link>
+            <Link className={styles.link} href={`/write`}>
+              Write
+            </Link>
           </div>
         )}
     </div>

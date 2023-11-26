@@ -18,7 +18,7 @@ export default function LoginPage() {
         onClick={() =>
           signIn("google", {
             redirect: true,
-            callbackUrl: "http://blog.byedev.com",
+            callbackUrl: "https://blog.byedev.com",
           })
         }
         className={styles.myBtn}
