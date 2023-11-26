@@ -88,10 +88,10 @@ export default function Header() {
           Contact
         </Link>
         {/* onClick={handleThemeToggle} */}
-        <button onClick={() => setTheme("light")}>
+        <button className={styles.light} onClick={() => setTheme("light")}>
           <RiSunLine />
         </button>
-        <button onClick={() => setTheme("dark")}>
+        <button className={styles.light} onClick={() => setTheme("dark")}>
           <RiMoonClearLine />
         </button>
         <button onClick={handleClick}>

@@ -64,9 +64,26 @@
   font-size: 20px;
 }
 
+.light {
+  margin: 0 0.5em;
+}
+
+@media screen and (max-width: 1024px) {
+  .heading {
+    font-size: 1.25em;
+    font-weight: 700;
+  }
+
+  .menu {
+    /* display: block; */
+    padding-right: 1em;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .heading {
-    font-size: 18px;
+    font-size: 1em;
+    font-weight: 700;
   }
 
   .menuSize {
@@ -74,23 +91,23 @@
   }
 
   .links {
-      display: none;
+    display: none;
   }
 
   .socials {
-      display: none;
+    display: none;
   }
 
   .menu {
-      display: block;
-      padding-right: 1em;
+    display: block;
+    padding-right: 0;
   }
 
   .logo {
-      justify-content: flex-start;
-      padding-left: 1em;
-      color: var(--textColor);
-      font-weight: 900;
+    justify-content: flex-start;
+    /* padding-left: 1em; */
+    color: var(--textColor);
+    font-weight: 900;
   }
 
   .linksSmallScreen {

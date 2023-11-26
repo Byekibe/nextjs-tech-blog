@@ -86,6 +86,6 @@ body {
 @media screen and (max-width: 768px) {
   .wrapper {
     max-width: 640px;
-    padding: 0 10px;
+    padding: 0 1em;
   }
 }
