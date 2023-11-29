@@ -87,7 +87,7 @@ export default function Header() {
           About
         </Link>
         <Link className={styles.linkSmallScreen} href="/contact">
-          {status === "authenticated" ? "Logout" : "Login"}
+          Contact
         </Link>
         {/* onClick={handleThemeToggle} */}
         <button className={styles.light} onClick={() => setTheme("light")}>

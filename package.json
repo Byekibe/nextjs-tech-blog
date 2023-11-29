@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "client-only": "^0.0.1",
     "colors": "^1.4.0",
     "md-editor-rt": "^4.8.3",
     "mongodb": "^6.2.0",
