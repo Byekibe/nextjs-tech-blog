@@ -6,6 +6,11 @@ import styles from "./login.module.css";
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
 
+const redirectUrl =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://byedev.com";
+
 export default function LoginPage() {
   const router = useRouter();
   const { data, status } = useSession();
@@ -18,7 +23,7 @@ export default function LoginPage() {
         onClick={() =>
           signIn("google", {
             redirect: true,
-            callbackUrl: "https://byedev.com",
+            callbackUrl: redirectUrl,
           })
         }
         className={styles.myBtn}

@@ -7,6 +7,7 @@ import { MdEditor } from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
 import { useRouter } from "next/navigation";
 import { baseUrl } from "../page";
+import { useTheme } from "next-themes";
 
 const sanitize = (html) => sanitizeHtml(html);
 
@@ -16,6 +17,7 @@ export default function WritePage() {
   const [slug, setSlug] = useState("");
   const [text, setText] = useState("");
   const [author, setAuthor] = useState("");
+  const { theme, setTheme } = useTheme();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -27,6 +29,7 @@ export default function WritePage() {
     // console.log(writeUrl);
 
     const writeUrl = "/api/posts";
+
     // const writeUrl = `${baseUrl}/api/posts`;
 
     fetch(writeUrl, {
@@ -89,7 +92,7 @@ export default function WritePage() {
           onChange={e => setBody(e.target.value)}
         /> */}
         <MdEditor
-          theme="dark"
+          theme={theme}
           modelValue={text}
           onChange={setText}
           sanitize={sanitize}
