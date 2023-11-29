@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import styles from "./singlePage.module.css";
 import Editor from "../../../components/myEditor/Editor.jsx";
 import ModifySinglePost from "../../../components/modify/ModifySinglePost.jsx";
+// import { useTheme } from "next-themes";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
 const baseUrl = "http://localhost:3000";

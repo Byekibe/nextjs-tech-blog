@@ -19,7 +19,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+      <head>
+        {process.env.NODE_ENV === "production" && (
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6273897210787470"
+            crossorigin="anonymous"
+          ></script>
+        )}
+      </head>
       <body className={inter.className}>
         <AuthProvider>
           <Providers>

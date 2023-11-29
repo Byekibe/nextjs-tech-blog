@@ -1,6 +1,7 @@
 "use client";
 
 import { useContext, useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import styles from "./header.module.css";
 import {
@@ -19,6 +20,7 @@ import { MenuContext } from "@/context/MenuContext";
 import { useTheme } from "next-themes";
 
 export default function Header() {
+  const { data, status } = useSession();
   const { showMenu, toggleMenu } = useContext(MenuContext);
   const [width, setWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : "undefined"
@@ -85,7 +87,7 @@ export default function Header() {
           About
         </Link>
         <Link className={styles.linkSmallScreen} href="/contact">
-          Contact
+          {status === "authenticated" ? "Logout" : "Login"}
         </Link>
         {/* onClick={handleThemeToggle} */}
         <button className={styles.light} onClick={() => setTheme("light")}>
