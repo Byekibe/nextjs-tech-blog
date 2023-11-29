@@ -9,23 +9,23 @@ import { useRouter } from "next/navigation";
 
 const sanitize = (html) => sanitizeHtml(html);
 
-export default function UpdateForm({ data, id }) {
+export default function UpdateForm({ data, slug }) {
   const router = useRouter();
   const [title, setTitle] = useState(data.title);
-  const [slug, setSlug] = useState(data.slug);
+  const [newSlug, setNewSlug] = useState(data.slug);
   const [text, setText] = useState(data.text);
   const [author, setAuthor] = useState(data.author);
 
   function handlePostUpdate(e) {
     e.preventDefault();
     // const putUrl = `http://localhost:3000/api/posts/${id}`;
-    const putUrl = `/api/posts/${id}`;
+    const putUrl = `/api/posts/${slug}`;
     console.log(putUrl);
     fetch(putUrl, {
       method: "PUT",
       body: JSON.stringify({
         title: title,
-        slug: slug,
+        newSlug: newSlug,
         text: text,
         author: author,
       }),
@@ -52,8 +52,8 @@ export default function UpdateForm({ data, id }) {
         <input
           type="text"
           name="slug"
-          value={slug}
-          onChange={(e) => setSlug(e.target.value)}
+          value={newSlug}
+          onChange={(e) => setNewSlug(e.target.value)}
         />
       </div>
       <br />

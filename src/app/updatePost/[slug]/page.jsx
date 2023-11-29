@@ -4,7 +4,7 @@ import styles from "./updatePost.module.css";
 const baseUrl = "http://localhost:3000";
 
 export default async function UpdatePage({ params }) {
-  const { id } = params;
+  const { slug } = params;
   //   const [data, setData] = useState("");
 
   //   useEffect(() => {
@@ -19,7 +19,7 @@ export default async function UpdatePage({ params }) {
   //   }, []);
 
   const getData = async () => {
-    const res = await fetch(`${baseUrl}/api/posts/${id}`, {
+    const res = await fetch(`${baseUrl}/api/posts/${slug}`, {
       cache: "no-store",
     });
     // const res = await fetch(`/api/posts/${id}`);
@@ -30,7 +30,7 @@ export default async function UpdatePage({ params }) {
 
   return (
     <div>
-      <UpdateForm data={await getData()} id={id} />
+      <UpdateForm data={await getData()} slug={slug} />
     </div>
   );
 }
