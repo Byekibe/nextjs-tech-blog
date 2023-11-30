@@ -21,14 +21,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <GoogleAnalytics GA_MEASUREMENT_ID="G-GN9256PTZ5" />
+      {process.env.NODE_ENV === "production" && (
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-8XTLLSMSJ7" />
+      )}
       <head>
         {process.env.NODE_ENV === "production" && (
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6273897210787470"
-            crossorigin="anonymous"
-          ></script>
+          <>
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-8XTLLSMSJ7"
+            ></script>
+            <script>
+              window.dataLayer = window.dataLayer || []; function gtag()
+              {dataLayer.push(arguments)}
+              gtag('js', new Date()); gtag('config', 'G-8XTLLSMSJ7');
+            </script>
+          </>
         )}
       </head>
       <body className={inter.className}>
