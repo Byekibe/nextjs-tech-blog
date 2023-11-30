@@ -28,14 +28,11 @@ export default function RootLayout({ children }) {
       <head>
         {process.env.NODE_ENV === "production" && (
           <div className="container">
-            <Script
-              async
-              src="https://www.googletagmanager.com/gtag/js?id=G-8XTLLSMSJ7"
-            />
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-8XTLLSMSJ7" />
             <Script id="google-analytics">
-              window.dataLayer = window.dataLayer || []; function gtag();
+              window.dataLayer = window.dataLayer || [] function gtag()
               {dataLayer.push(arguments)}
-              gtag('js', new Date()); gtag('config', 'G-8XTLLSMSJ7');
+              gtag('js', new Date()) gtag('config', 'G-8XTLLSMSJ7')
             </Script>
           </div>
         )}
