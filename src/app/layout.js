@@ -10,6 +10,7 @@ import AuthProvider from "../providers/AuthProvider.jsx";
 // import Head from "next/head";
 import GoogleAnalytics from "../components/googleAnalytics/GoogleAnalytics.jsx";
 import CookieBanner from "../components/cookieBanner/CookieBanner.jsx";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,17 +27,17 @@ export default function RootLayout({ children }) {
       )}
       <head>
         {process.env.NODE_ENV === "production" && (
-          <>
-            <script
+          <div className="container">
+            <Script
               async
               src="https://www.googletagmanager.com/gtag/js?id=G-8XTLLSMSJ7"
-            ></script>
-            <script>
+            />
+            <Script>
               window.dataLayer = window.dataLayer || []; function gtag()
               {dataLayer.push(arguments)}
               gtag('js', new Date()); gtag('config', 'G-8XTLLSMSJ7');
-            </script>
-          </>
+            </Script>
+          </div>
         )}
       </head>
       <body className={inter.className}>
