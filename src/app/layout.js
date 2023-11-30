@@ -13,6 +13,7 @@ import CookieBanner from "../components/cookieBanner/CookieBanner.jsx";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
+const GA_MEASUREMENT_ID = "G-8XTLLSMSJ7";
 
 export const metadata = {
   title: "byedev.com Blog",
@@ -30,9 +31,13 @@ export default function RootLayout({ children }) {
           <div className="container">
             <Script src="https://www.googletagmanager.com/gtag/js?id=G-8XTLLSMSJ7" />
             <Script id="google-analytics">
-              window.dataLayer = window.dataLayer || [] function gtag()
-              {dataLayer.push(arguments)}
-              gtag('js', new Date()) gtag('config', 'G-8XTLLSMSJ7')
+              {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', ${GA_MEASUREMENT_ID});
+        `}
             </Script>
           </div>
         )}
