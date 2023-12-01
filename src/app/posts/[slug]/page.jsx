@@ -15,7 +15,7 @@ const getPost = async (slug) => {
   // const postsUrl = `/api/posts/${id}`;
 
   const res = await fetch(postsUrl, {
-    cache: "no-store",
+    // cache: "no-store",
   });
 
   if (!res.ok) {
