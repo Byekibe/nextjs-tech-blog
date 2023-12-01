@@ -6,5 +6,8 @@ import { useTheme } from "next-themes";
 
 export default function Editor({ data }) {
   const { theme, setTheme } = useTheme();
-  return <MdPreview language="en-US" theme={theme} modelValue={data} />;
+  console.log(theme);
+  return (
+    <MdPreview language="en-US" theme={theme || "dark"} modelValue={data} />
+  );
 }
