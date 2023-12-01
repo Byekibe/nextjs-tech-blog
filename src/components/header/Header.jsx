@@ -75,8 +75,8 @@ export default function Header() {
         style={{
           top: !showMenu ? "-8em" : "1.375em",
           display: width > 640 ? "none" : "flex",
-          backgroundColor: theme === "light" ? "gray" : "black",
-          color: theme === "light" ? "#fff" : "#fff",
+          backgroundColor: theme === "light" ? "gray" : "#0f172a",
+          color: theme === "light" ? "#ddd" : "#ddd",
         }}
         className={styles.linksSmallScreen}
       >
@@ -114,8 +114,8 @@ export default function Header() {
       <div
         style={{
           top: showMenu ? "1em" : "1em",
-          backgroundColor: theme === "light" ? "gray" : "black",
-          color: theme === "light" ? "#fff" : "#fff",
+          backgroundColor: theme === "light" ? "gray" : "#0f172a",
+          color: theme === "light" ? "#ddd" : "#ddd",
           border: "2px solid #ffff80",
         }}
         className={styles.links}
