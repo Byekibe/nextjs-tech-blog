@@ -9,7 +9,6 @@ export default function Editor({ data }) {
   return (
     <MdPreview
       language="en-US"
-      previewTheme="cyanosis"
       theme={theme}
       modelValue={data}
       className="editorRt"
