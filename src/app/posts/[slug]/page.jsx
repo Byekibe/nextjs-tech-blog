@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import styles from "./singlePage.module.css";
 import Editor from "../../../components/myEditor/Editor.jsx";
 import ModifySinglePost from "../../../components/modify/ModifySinglePost.jsx";
+import LikeShare from "../../../components/likeShare/LikeShare";
 // import { useTheme } from "next-themes";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
@@ -24,9 +25,16 @@ const getPost = async (slug) => {
   return res.json();
 };
 
+async function urlRestorer(unfilteredSlug) {
+  return unfilteredSlug.replace(/-/g, " ");
+}
+
 export default async function SinglePage({ params }) {
   const { slug } = params;
-  const data = await getPost(slug);
+  const newSlug = await urlRestorer(slug);
+  // console.log(`-------newSlug: ${newSlug}---------`);
+
+  const data = await getPost(newSlug);
   const { date, author } = data;
   // function getId(id) {
   //   return id;
@@ -46,6 +54,10 @@ export default async function SinglePage({ params }) {
       <div className={styles.asideContent}>
         <h2 className={styles.heading}>{data?.title}</h2>
         <Editor data={data?.text} />
+      </div>
+
+      <div className={styles.likeShare}>
+        <LikeShare slug={slug} />
       </div>
     </div>
   );

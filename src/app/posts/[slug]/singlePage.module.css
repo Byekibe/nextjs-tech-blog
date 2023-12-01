@@ -1,3 +1,13 @@
+/* .card {
+  position: relative;
+} */
+
+/* .likeShare {
+  position: absolute;
+  top: auto;
+  right: auto;
+} */
+
 .meta {
   display: flex;
   margin-bottom: 1.5em;

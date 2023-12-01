@@ -1,0 +1,45 @@
+.likeshare {
+  display: flex;
+  margin: 0 1em;
+}
+
+.heart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1em;
+  font-size: 1.375em;
+  cursor: pointer;
+}
+
+.likesNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.375em;
+  font-size: 0.75em;
+}
+
+.share {
+  font-size: 1.375em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.heartIcon:hover {
+  color: red;
+}
+
+.shareIcon:hover {
+  color: rgb(141, 141, 212);
+}
+
+/* .heart:hover {
+  
+} */
+
+/* .share:hover {
+  border-color: rgb(141, 141, 212);
+} */

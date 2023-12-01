@@ -16,9 +16,13 @@ export default function CookieBanner() {
   useEffect(() => {
     const newValue = cookieConsent ? "granted" : "denied";
 
-    window.gtag("consent", "update", {
-      analytics_storage: newValue,
-    });
+    {
+      process.env.NODE_ENV === "production" &&
+        typeof window !== "undefined" &&
+        window.gtag("consent", "update", {
+          analytics_storage: newValue,
+        });
+    }
 
     setLocalStorage("cookie_consent", cookieConsent);
 
