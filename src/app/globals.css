@@ -75,14 +75,22 @@ body {
   text-align: justify;
 }
 
-.md-editor-preview-wrapper {
+/* .md-editor-preview-wrapper {
+  border-radius: 5px;
+  margin: 1em 0 !important;
+} */
+
+.md-editor-preview {
   padding: 10px 0 !important;
-  background-color: #0f172a;
 }
 
 /* .noParticularSelector {
   color: #ffffff80;
 } */
+
+.md-editor-dark {
+  --md-bk-color: #333 !important;
+}
 
 @media screen and (max-width: 1536px) {
   .wrapper {

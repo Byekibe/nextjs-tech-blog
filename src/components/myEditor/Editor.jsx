@@ -6,6 +6,14 @@ import { useTheme } from "next-themes";
 
 export default function Editor({ data }) {
   const { theme, setTheme } = useTheme();
-  console.log(theme);
-  return <MdPreview language="en-US" theme={theme} modelValue={data} />;
+  return (
+    <MdPreview
+      language="en-US"
+      previewTheme="cyanosis"
+      theme={theme}
+      modelValue={data}
+      className="editorRt"
+      showCodeRowNumber={true}
+    />
+  );
 }
