@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ["latin"] });
 const GA_MEASUREMENT_ID = "G-8XTLLSMSJ7";
 
 export const metadata = {
-  title: "byedev.com Blog",
+  title: "Byedev Blog",
   description: "Software development technical blog",
 };
 
