@@ -20,33 +20,27 @@ export default function Card({ posts, loading }) {
         <Loader />
       ) : (
         posts.map((post) => (
-          <>
-            {/* {console.log(`-----------dashed: ${post.slug}---------`)} */}
-            <div
-              key={post._id}
-              className={`${styles.card} ${roboto.className}`}
-            >
-              <div className={styles.date}>{post?.createdAt.slice(0, 10)}</div>
-              <div className={styles.asideContent}>
-                <h2 className={styles.heading}>{post.title}</h2>
-                <p className={styles.slug}>{post.slug}</p>
+          <div key={post._id} className={`${styles.card} ${roboto.className}`}>
+            <div className={styles.date}>{post?.createdAt.slice(0, 10)}</div>
+            <div className={styles.asideContent}>
+              <h2 className={styles.heading}>{post.title}</h2>
+              <p className={styles.slug}>{post.slug}</p>
+              <div>
+                <div className={styles.more}>
+                  <Link
+                    className={styles.moreLink}
+                    href={`/posts/${SpaceTrimmer(post.slug)}`}
+                  >
+                    Read more
+                  </Link>
+                  <RiArrowRightLine className={styles.moreLinkIcon} />
+                </div>
                 <div>
-                  <div className={styles.more}>
-                    <Link
-                      className={styles.moreLink}
-                      href={`/posts/${SpaceTrimmer(post.slug)}`}
-                    >
-                      Read more
-                    </Link>
-                    <RiArrowRightLine className={styles.moreLinkIcon} />
-                  </div>
-                  <div>
-                    <AuthGroup slug={post.slug} />
-                  </div>
+                  <AuthGroup slug={post.slug} />
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ))
       )}
     </>

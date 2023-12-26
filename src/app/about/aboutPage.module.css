@@ -13,6 +13,7 @@
 
 .form {
   text-align: center;
+  margin-top: 1.5em;
 }
 
 .name {
@@ -44,10 +45,27 @@
   border-radius: 0 1.5em 1.5em 0;
 }
 
+.subscribe:hover {
+  background-color: #6b6969;
+  color: black;
+}
+
 .inputGroup {
   max-width: 40ch;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.5em;
+}
+
+.container {
+  position: relative;
+  height: 5em;
+}
+
+.err {
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  color: red;
 }

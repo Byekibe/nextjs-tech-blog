@@ -1,0 +1,24 @@
+.link {
+  color: red;
+}
+
+.header {
+  font-size: 24px;
+  opacity: 50%;
+}
+
+.subHeader {
+  font-size: large;
+  opacity: 50%;
+  margin: 0.5em 0;
+}
+
+.smallHeading {
+  font-size: 18px;
+  opacity: 50%;
+  margin: 0.375em 0;
+}
+
+.contact {
+  color: red;
+}

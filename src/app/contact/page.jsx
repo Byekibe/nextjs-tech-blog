@@ -11,7 +11,7 @@ import {
 const Contact = () => {
   return (
     <div className={styles.contact}>
-      <h1>Contact</h1>
+      <h1 className={styles.heading}>Contact:</h1>
       <div className={styles.socials}>
         <Link className={styles.social} href="https://twitter.com/kibetpete">
           <RiTwitterFill className={styles.socialIcon} />
