@@ -6,9 +6,10 @@ export default function cookiePolicy() {
     <div>
       <h1 className={styles.header}>Cookie policy</h1>
       <p>
-        Please read this cookie policy ("cookie policy", "policy") carefully
-        before using [website] website ("website", "service") operated by [name]
-        ("us", "we", "our").
+        Please read this cookie policy (&quot;cookie policy&quot;,
+        &quot;policy&quot;) carefully before using [website] website
+        (&quot;website&quot;, &quot;service&quot;) operated by [name]
+        (&quot;us&quot;, &quot;we&quot;, &quot;our&quot;).
       </p>
       <h3 className={styles.subHeader}>What are cookies?</h3>
       <p>
@@ -16,7 +17,7 @@ export default function cookiePolicy() {
         Cookies are simple text files that are stored on your computer or mobile
         device by a website's server. Each cookie is unique to your web browser.
         It will contain some anonymous information such as a unique identifier,
-        website's domain name, and some digits and numbers.
+        website&apos;s domain name, and some digits and numbers.
       </p>
       <h3 className={styles.subHeader}>What types of cookies do we use?</h3>
       <h4 className={styles.smallHeading}>Necessary cookies</h4>
