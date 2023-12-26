@@ -15,9 +15,9 @@ export default function cookiePolicy() {
       <p>
         {" "}
         Cookies are simple text files that are stored on your computer or mobile
-        device by a website's server. Each cookie is unique to your web browser.
-        It will contain some anonymous information such as a unique identifier,
-        website&apos;s domain name, and some digits and numbers.
+        device by a website&apos;s server. Each cookie is unique to your web
+        browser. It will contain some anonymous information such as a unique
+        identifier, website&apos;s domain name, and some digits and numbers.
       </p>
       <h3 className={styles.subHeader}>What types of cookies do we use?</h3>
       <h4 className={styles.smallHeading}>Necessary cookies</h4>
